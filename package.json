@@ -1,0 +1,27 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Business logic for a game of tic tac toe",
+  "main": "game.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baree99/tic-tac-toe.git"
+  },
+  "author": "Peter Barcsak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baree99/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/baree99/tic-tac-toe#readme"
+}
