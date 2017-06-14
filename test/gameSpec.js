@@ -17,4 +17,13 @@ describe('Game', function() {
             expect(game.turn).to.equal(game.player2)
         })
     })
+
+    describe('Claim Field', function() {
+        it("stores the claimed field in the player in turn's object", function() {
+            game.turn = game.player1
+            game.claimField('a1')
+            expect(game.player1.claimedFields).to.include('a1')
+        }
+        )
+    })
 })
