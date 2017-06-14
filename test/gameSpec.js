@@ -7,5 +7,6 @@ describe('Game', function() {
 
     it('initialize with two players', function() {
         expect(game.player1).to.have.property('claimedFields')
+        expect(game.player2).to.have.property('claimedFields')
     })
 })
