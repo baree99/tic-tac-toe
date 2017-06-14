@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-const Game = require('../model/game.js');
+const Game = require('../model/game');
 
 describe('Game', function() {
 

@@ -1,13 +1,17 @@
-const Field = function() {
-    this.map = this._createMap();
+const GameTable = function() {
+    this.fields = this._createTable();
 }
 
-Field.prototype._createMap = function() {
-    var table = this._createTable();
+GameTable.prototype.removeField = function(field) {
+    delete this.fields[field]
+}
+
+GameTable.prototype._createTable = function() {
+    var table = this._createFields();
     return this._assignValuesToFields(table)
 }
 
-Field.prototype._createTable = function() {
+GameTable.prototype._createFields = function() {
     var columns = ['a', 'b', 'c'];
     var rows = [1, 2, 3];    
     var table = [];      
@@ -21,7 +25,7 @@ Field.prototype._createTable = function() {
     return table
 }
 
-Field.prototype._assignValuesToFields = function(table) {
+GameTable.prototype._assignValuesToFields = function(table) {
     var values = [4, 3, 8, 9, 5, 1, 2, 7, 6];
     var fieldValues = {};
 
@@ -31,8 +35,4 @@ Field.prototype._assignValuesToFields = function(table) {
     return fieldValues;
 }
 
-Field.prototype._assigner = function() {
-    
-}
-
-module.exports = Field;
+module.exports = GameTable;
