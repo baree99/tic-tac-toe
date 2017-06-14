@@ -7,7 +7,7 @@ const Game = function() {
 }
 
 Game.prototype.turnSwitch = function() {
-    this.turn = ( this.turn === this.player1 ) ? this.player2 : this.player1;
+    this.turn = (this.turn === this.player1) ? this.player2 : this.player1;
 }
 
 Game.prototype.claimField = function(field) {
