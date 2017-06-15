@@ -12,8 +12,12 @@ Game.prototype.turnSwitch = function() {
     this.turn = (this.turn === this.player1) ? this.player2 : this.player1;
 }
 
-Game.prototype.claimField = function(field) {
-    this.turn.recordClaimedField(field)
+Game.prototype.claimField = function(field) {   
+    if (this.rules.isFieldAvailable(field)) {
+        return this._executeFieldClaiming(field)
+    } else {
+        return 'Field has already been taken'
+    }
 }
 
 Game.prototype.gameOver = function() {
@@ -23,7 +27,13 @@ Game.prototype.gameOver = function() {
         return 'All fields has been taken'
     }
 
-    return false
+    return this.turnSwitch()
+}
+
+Game.prototype._executeFieldClaiming = function(field) {
+    this.turn.recordClaimedField(field, this.rules.gameTable.fields[field])
+    this.rules.gameTable.removeField(field)
+    return this.gameOver()
 }
 
 module.exports = Game;

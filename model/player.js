@@ -1,10 +1,10 @@
 const Player = function(name) {
     this.name = name
-    this.claimedFields = [];
+    this.claimedFields = {};
 }
 
-Player.prototype.recordClaimedField = function(field) {
-    this.claimedFields.push(field)
+Player.prototype.recordClaimedField = function(field, value) {
+    this.claimedFields[field] = value
 }
 
 module.exports = Player;

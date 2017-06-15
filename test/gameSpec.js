@@ -26,7 +26,7 @@ describe('Game', function() {
         it("stores the claimed field in the player in turn's object", function() {
             game.turn = game.player1;
             game.claimField('a1');
-            expect(game.player1.claimedFields).to.include('a1')
+            expect(game.player1.claimedFields).to.include({'a1': 4})
         });
     });
 

@@ -20,7 +20,7 @@ describe('GameTable', function() {
     });
 
     describe('Remove field', function() {
-        it('removes a a claimed field', function() {
+        it('removes a claimed field', function() {
             gameTable.removeField('a1')
             expect(gameTable.fields).to.not.include({'a1': 4})
         });
