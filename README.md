@@ -2,15 +2,15 @@
 
 Business logic for a Tic Tac Toe game. I used [magic square](https://en.wikipedia.org/wiki/Magic_square) to determine the winner:
 
-|     |  A  |  B  |  C  |
+|     |**A**|**B**|**C**|
 | --- | --- | --- | --- |
-|  1  |  4  |  9  |  2  |
-|  2  |  3  |  5  |  7  |
-|  3  |  8  |  1  |  6  |
+|**1**|  4  |  9  |  2  |
+|**2**|  3  |  5  |  7  |
+|**3**|  8  |  1  |  6  |
 
 A player won a game, when 3 of the player's claimed field's values add up to 15.
 
-## Fetures
+## Features
 
 * There are two players in the game (X and O)
 * Players take turns until the game is over
@@ -29,7 +29,9 @@ npm install
 
 ## Running tests
 
-`mocha`
+```
+mocha
+```
 
 ## How the code is used
 
@@ -58,7 +60,8 @@ npm install
 > game.claimField('a3')
 > game.claimField('c3')
 'X won, winning fields: a1,b2,c3'
-
+```
+```
 > var game = new Game()
 > game.claimField('b2');
 > game.claimField('c1');
