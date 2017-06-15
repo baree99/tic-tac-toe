@@ -24,11 +24,13 @@ Rules.prototype.win = function(fields) {
             for (var k = 2; k < fieldNames.length; k++) {
                 if (j >= k) {k = j + 1}
                 if (fields[fieldNames[i]] + fields[fieldNames[j]] + fields[fieldNames[k]] === magicSum) {
-                    return [
+                    this.winningFields = [
                         fieldNames[i],
                         fieldNames[j],
                         fieldNames[k]
                     ];
+
+                    return true
                 }
             }
         }

@@ -15,15 +15,15 @@ describe('Rules', function() {
 
     describe('Win', function() {
         it('returns the winning fields', function() {
-            var winningFields = {
+            var fields = {
                 'a1': 4,
                 'a3': 8,
                 'b3': 1,
                 'c2': 7,
                 'c3': 6
             }
-
-            expect(rules.win(winningFields)).to.deep.equal([
+            expect(rules.win(fields)).to.be.true
+            expect(rules.winningFields).to.deep.equal([
                 'a3',
                 'b3',
                 'c3'
@@ -31,7 +31,7 @@ describe('Rules', function() {
         });
 
         it('returns false when player is not winning', function() {
-            var winningFields = {
+            var fields = {
                 'a1': 4,
                 'b1': 9,
                 'b3': 1,
@@ -39,7 +39,7 @@ describe('Rules', function() {
                 'c3': 6
             }
 
-            expect(rules.win(winningFields)).to.be.false
+            expect(rules.win(fields)).to.be.false
         });
     });
 

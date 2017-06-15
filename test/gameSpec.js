@@ -3,7 +3,11 @@ const Game = require('../model/game');
 
 describe('Game', function() {
 
-    var game = new Game();
+    var game;
+
+    beforeEach(function() {
+        game = new Game();
+    });
 
     it('initialize with two players', function() {
         expect(game.player1).to.have.property('claimedFields')
@@ -25,4 +29,21 @@ describe('Game', function() {
             expect(game.player1.claimedFields).to.include('a1')
         });
     });
+
+    describe('Game Over', function() {
+        it('returns false when noone is winning or fields left to claim', function() {
+            expect(game.gameOver()).to.be.false
+        })
+
+        it('returns the winning player with winning fields', function() {
+            game.player1.claimedFields = {
+                'a1': 4,
+                'a3': 8,
+                'b3': 1,
+                'c2': 7,
+                'c3': 6
+            }
+            expect(game.gameOver()).to.equal('X won, winning fields: a3,b3,c3')
+        })
+    })
 });
