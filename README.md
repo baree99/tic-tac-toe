@@ -3,10 +3,10 @@
 Business logic for a Tic Tac Toe game. I used [magic square](https://en.wikipedia.org/wiki/Magic_square) to determine the winner:
 
 |     |**A**|**B**|**C**|
-| --- | --- | --- | --- |
-|**1**|  4  |  9  |  2  |
-|**2**|  3  |  5  |  7  |
-|**3**|  8  |  1  |  6  |
+|:---:|:---:|:---:|:---:|
+|**1**| *4* | *9* | *2* |
+|**2**| *3* | *5* | *7* |
+|**3**| *8* | *1* | *6* |
 
 A player won a game, when 3 of the player's claimed field's values add up to 15.
 
