@@ -12,4 +12,11 @@ describe('Rules', function() {
             expect(rules.isFieldAvailable('a2')).to.be.true
         });
     });
+
+    describe('Win', function() {
+        it('returns the winning fields', function() {
+            var winningFields = { 'a1': 4, 'a3': 8, 'c2': 7, 'b3': 1, 'c3': 6 }
+            expect(rules.win(winningFields)).to.deep.equal(['a3', 'b3', 'c3'])
+        });
+    });
 });
