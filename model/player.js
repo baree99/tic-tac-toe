@@ -1,4 +1,5 @@
-const Player = function() {
+const Player = function(name) {
+    this.name = name
     this.claimedFields = [];
 }
 

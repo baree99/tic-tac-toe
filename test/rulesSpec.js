@@ -15,8 +15,31 @@ describe('Rules', function() {
 
     describe('Win', function() {
         it('returns the winning fields', function() {
-            var winningFields = { 'a1': 4, 'a3': 8, 'c2': 7, 'b3': 1, 'c3': 6 }
-            expect(rules.win(winningFields)).to.deep.equal(['a3', 'b3', 'c3'])
+            var winningFields = {
+                'a1': 4,
+                'a3': 8,
+                'b3': 1,
+                'c2': 7,
+                'c3': 6
+            }
+
+            expect(rules.win(winningFields)).to.deep.equal([
+                'a3',
+                'b3',
+                'c3'
+            ])
+        });
+
+        it('returns false when player is not winning', function() {
+            var winningFields = {
+                'a1': 4,
+                'b1': 9,
+                'b3': 1,
+                'c2': 7,
+                'c3': 6
+            }
+
+            expect(rules.win(winningFields)).to.be.false
         });
     });
 

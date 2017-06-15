@@ -3,7 +3,11 @@ const Player = require('../model/player');
 
 describe('Player', function() {
 
-    var player = new Player();
+    var player = new Player('X');
+
+    it('initialize with a name', function() {
+        expect(player.name).to.equal('X');
+    });
 
     it('initialize with an empty array of claimed fields', function() {
         expect(player.claimedFields).to.deep.equal([]);

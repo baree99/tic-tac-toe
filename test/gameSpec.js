@@ -23,6 +23,6 @@ describe('Game', function() {
             game.turn = game.player1;
             game.claimField('a1');
             expect(game.player1.claimedFields).to.include('a1')
-        }); 
+        });
     });
 });
