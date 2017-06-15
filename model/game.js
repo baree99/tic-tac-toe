@@ -19,9 +19,11 @@ Game.prototype.claimField = function(field) {
 Game.prototype.gameOver = function() {
     if (this.rules.win(this.turn.claimedFields)) {
         return this.turn.name + ' won, winning fields: ' + this.rules.winningFields
-    } else {
-        return this.rules.allFieldsAreTaken()
+    } else if (this.rules.allFieldsAreTaken()) {
+        return 'All fields has been taken'
     }
+
+    return false
 }
 
 module.exports = Game;

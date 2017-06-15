@@ -32,7 +32,8 @@ describe('Game', function() {
 
     describe('Game Over', function() {
         it('returns false when noone is winning or fields left to claim', function() {
-            expect(game.gameOver()).to.be.false
+            game.rules.gameTable.fields = {};
+            expect(game.gameOver()).to.equal('All fields has been taken')
         })
 
         it('returns the winning player with winning fields', function() {
