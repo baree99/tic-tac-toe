@@ -19,4 +19,15 @@ describe('Rules', function() {
             expect(rules.win(winningFields)).to.deep.equal(['a3', 'b3', 'c3'])
         });
     });
+
+    describe('All fields taken', function() {
+        it('returns false when there are fields left to take', function() {
+            expect(rules.allFieldsAreTaken()).to.be.false
+        })
+
+        it('returns false when there are fields left to take', function() {
+            rules.gameTable.fields = {};
+            expect(rules.allFieldsAreTaken()).to.be.true
+        })
+    })
 });
