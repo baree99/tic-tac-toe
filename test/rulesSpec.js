@@ -48,7 +48,7 @@ describe('Rules', function() {
             expect(rules.allFieldsAreTaken()).to.be.false
         })
 
-        it('returns false when there are fields left to take', function() {
+        it('returns true when there are no fields left to take', function() {
             rules.gameTable.fields = {};
             expect(rules.allFieldsAreTaken()).to.be.true
         })

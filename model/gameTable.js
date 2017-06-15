@@ -35,10 +35,20 @@ GameTable.prototype._createFields = function() {
 }
 
 GameTable.prototype._assignMagicSquareToFields = function(fields) {
-    var fieldsWithMagicSquare = {},
-        magicSquare = [4, 3, 8, 9, 5, 1, 2, 7, 6];      
+    var fieldsWithMagicSquare = {}, i,
+        magicSquare = [
+            4,
+            3,
+            8,
+            9,
+            5,
+            1,
+            2,
+            7,
+            6
+        ];
 
-    for (var i = 0; i < fields.length; i++) {
+    for (i = 0; i < fields.length; i++) {
         fieldsWithMagicSquare[fields[i]] = magicSquare[i];
     }
 

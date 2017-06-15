@@ -1,5 +1,5 @@
-const Player = require('./player')
-const Rules = require('./rules')
+const Player = require('./player'),
+    Rules = require('./rules')
 
 const Game = function() {
     this.player1 = new Player('X');

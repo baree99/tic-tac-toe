@@ -6,7 +6,7 @@ describe('Test Game', function() {
     describe('When someone wins', function() {
         var game = new Game();
 
-        it('after a player claimed a field it turns switch', function() {
+        it('after a player claimed a field it switches turn', function() {
             expect(game.turn.name).to.equal('X')
             game.claimField('a1');
             expect(game.turn.name).to.equal('O')
@@ -26,7 +26,7 @@ describe('Test Game', function() {
             })
         })
 
-        it('stops you claiming a claimed field', function() {
+        it('stops you from claiming a claimed field', function() {
             expect(game.claimField('b3')).to.equal('Field has already been taken')
         })
 
@@ -38,16 +38,18 @@ describe('Test Game', function() {
     })
 
     describe('When noone wins', function() {
-        var game = new Game();
-        
-        game.claimField('b2');
-        game.claimField('c1');
-        game.claimField('c2');
-        game.claimField('a2');
-        game.claimField('a1');
-        game.claimField('c3');
-        game.claimField('a3');
-        game.claimField('b1');
-        expect(game.claimField('b3')).to.equal('All fields has been taken')
+        it("returns that 'All fields has been taken'", function() {
+            var game = new Game();
+            
+            game.claimField('b2');
+            game.claimField('c1');
+            game.claimField('c2');
+            game.claimField('a2');
+            game.claimField('a1');
+            game.claimField('c3');
+            game.claimField('a3');
+            game.claimField('b1');
+            expect(game.claimField('b3')).to.equal('All fields has been taken')
+        })
     })
 })

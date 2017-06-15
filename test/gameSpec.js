@@ -31,7 +31,7 @@ describe('Game', function() {
     });
 
     describe('Game Over', function() {
-        it('returns false when noone is winning or fields left to claim', function() {
+        it("returns 'All fields has been taken' when noone is winning or fields left to claim", function() {
             game.rules.gameTable.fields = {};
             expect(game.gameOver()).to.equal('All fields has been taken')
         })

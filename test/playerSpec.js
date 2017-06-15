@@ -9,7 +9,7 @@ describe('Player', function() {
         expect(player.name).to.equal('X');
     });
 
-    it('initialize with an empty array of claimed fields', function() {
+    it('initialize with an empty hash of claimed fields', function() {
         expect(player.claimedFields).to.deep.equal({});
     });
 
